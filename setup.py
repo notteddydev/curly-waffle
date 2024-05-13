@@ -1,6 +1,6 @@
 from setuptools import setup, find_packages
 
-VERSION = '0.0.1'
+VERSION = '0.0.2'
 DESCRIPTION = 'A Python package for creating a unique file name within a directory'
 LONG_DESCRIPTION = 'A Python package which will check that a proposed file path would be unique. If not unique, it will make it unique by concatenating a hyphen and integer. Handy to avoid overwriting files.'
 
