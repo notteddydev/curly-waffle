@@ -3,20 +3,13 @@
 import os
 
 
-def get_unique_file_path(proposed_file_path_with_ext):
+def get_unique_file_path(dest):
     """If unique, returns the proposed file path. If not, concatenates -{duplicate_number}, incrementing duplicate number until unique."""
-    if not os.path.isfile(proposed_file_path_with_ext):
-        return proposed_file_path_with_ext
+    file_path, ext = os.path.splitext(dest)
+    duplicate_count = 1
 
-    split = os.path.splitext(proposed_file_path_with_ext)
-    file_path = split[0]
-    ext = split[1]
-    checking_for_duplicates = True
-    duplicate_count = 0
-
-    while checking_for_duplicates:
+    while os.path.exists(dest):
+        dest = f'{file_path}-{duplicate_count}{ext}'
         duplicate_count += 1
-        checking_for_duplicates = os.path.isfile(
-            f'{file_path}-{duplicate_count}{ext}')
 
-    return f'{file_path}-{duplicate_count}{ext}'
+    return dest
