@@ -1,4 +1,5 @@
-# Python package for providing a unique file path, based on a proposed file path.
+# curly-waffle
+Python package for providing a unique file path, based on a proposed file path.
 
 If file path argument is unique, the same file path will be returned.
 
